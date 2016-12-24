@@ -1,0 +1,12 @@
+version: '2'
+services:
+  ssdb:
+    container_name: ssdb-server
+    restart: always
+    privileged: true
+    image: benyoo/ssdb:1.9.2
+    network_mode: host
+    volumes:
+    - /usr/localtime:/etc/localtime:ro
+    - /etc/ssdb.conf:/etc/ssdb.conf:rw
+    - /data/ssdb:/data/ssdb:rw
